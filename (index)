@@ -1,13 +1,13 @@
 <html>
 
 <head>
-    <title>We are Jammin'</title>
+    <title>Biz Süperiz'</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="A funny clip from Captain Underpants with Jetpack Joyride music. They are jammin!"
+    <meta content="Captain Underpants'tan Jetpack Joyride müziğiyle komik bir klip. Çok eğleniyorlar!"
         name="description">
     <meta content="website" property="og:type">
-    <meta content="We Are Jammin'" name="twitter:title" property="og:title">
-    <meta content="A funny clip from Captain Underpants with Jetpack Joyride music. They are jammin!"
+    <meta content="Biz Süperiz" name="twitter:title" property="og:title">
+    <meta content="Captain Underpants'tan Jetpack Joyride müziğiyle komik bir klip. Çok eğleniyorlar!"
         name="twitter:description" property="og:description">
     <meta content="https://we-are-jammin.xyz/jammin.png" name="twitter:image" property="og:image">
     <meta content="summary" name="twitter:card">
@@ -50,30 +50,27 @@
                 const detailed = await (await fetch(`/json/${basic.YourFuckingIPAddress}`).catch(() => e('Disable your aggressive ad-blocker and refresh'))).json().catch(e);
                 loadingProgress.textContent = '99';
                 const detector = new BrowserDetector(window.navigator.userAgent).parseUserAgent();
-                p('IP Address', basic.YourFuckingIPAddress);
-                p('Country', detailed.country);
-                p('Region', detailed.regionName);
-                p('City', detailed.city);
-                p('ZIP Code', detailed.zip);
-                p('Full Location', basic.YourFuckingLocation);
-                p('Latitude', detailed.lat);
-                p('Longitude', detailed.lon);
-                p('Timezone', detailed.timezone);
+                p('IP Adresi', basic.YourFuckingIPAddress);
+                p('Posta Kodu', detailed.zip);
+                p('Tam Konum', basic.YourFuckingLocation);
+                p('Enlem', detailed.lat);
+                p('Boylam', detailed.lon);
+                p('Saat Dilimi', detailed.timezone);
                 p('Current Time', new Date().toLocaleString());
-                p('ISP', detailed.isp);
+                p('Internet Sağlayıcısı', detailed.isp);
                 p('Organization', detailed.org);
                 p('Autonomous System', detailed.as);
-                p('Browser Name', detector.name);
-                p('Platform Name', detector.platform);
-                p('Browser Version', detector.version);
-                p('Mobile/Tablet', (detector.isMobile || detector.isTablet) ? 'Yes' : 'No');
-                p('Referrer', document.referrer || 'None');
-                p('System Languages', navigator.languages.join(', '));
-                p('Screen Width', screen.width, 'px');
-                p('Screen Height', screen.height, 'px');
+                p('Tarayıcı İsmi', detector.name);
+                p('Platform İsmi', detector.platform);
+                p('Tarayıcı Versiyonu', detector.version);
+                p('Mobil/Tablet', (detector.isMobile || detector.isTablet) ? 'Yes' : 'No');
+                p('Yönlendiren', document.referrer || 'None');
+                p('Sistem Dili', navigator.languages.join(', '));
+                p('Ekran Genişliği', screen.width, 'px');
+                p('Ekran Yüksekliği', screen.height, 'px');
                 if (screen.width != window.width || screen.height != window.height) {
-                    p('Window Width', window.outerWidth, 'px');
-                    p('Window Height', window.outerHeight, 'px');
+                    p('Pencere Genişliği', window.outerWidth, 'px');
+                    p('Pencere Yüksekliği', window.outerHeight, 'px');
                 }
                 p('Display Pixel Depth', screen.pixelDepth);
                 if (typeof screen.orientation != 'undefined') {
